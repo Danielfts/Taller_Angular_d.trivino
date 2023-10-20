@@ -1,5 +1,7 @@
 # TallerAngularDTrivino
 
+Taller del framework Angular de Daniel Felipe Triviño Santana, 202113218, para el curso de Desarrollo de SW en equipos
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.6.
 
 ## Development server
