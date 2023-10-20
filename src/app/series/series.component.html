@@ -9,6 +9,13 @@
       </tr>
     </thead>
     <tbody>
-
+      <tr *ngFor="let serie of series">
+        <td>{{serie.id}}</td>
+        <td>{{serie.name}}</td>
+        <td>{{serie.channel}}</td>
+        <td>{{serie.seasons}}</td>
+      </tr>
     </tbody>
   </table>
+  <p>Seasons average: {{avgSeasons}}</p>
+

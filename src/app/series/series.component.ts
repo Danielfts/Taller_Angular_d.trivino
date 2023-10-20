@@ -11,10 +11,12 @@ export class SeriesComponent implements OnInit{
   constructor(private service :SeriesService){}
 
   series:Serie[] = [];
+  avgSeasons:number = 0;
 
   getSeries():void{
     this.service.getSeries().subscribe((series)=>{
       this.series = series;
+      this.avgSeasons = this.service.getSeriesSeasonsAverage(this.series);
     })
   }
   
