@@ -10,7 +10,7 @@ import { Serie } from './serie';
 export class SeriesComponent implements OnInit{
   constructor(private service :SeriesService){}
 
-  series:Serie[] = [];
+  public series:Serie[] = [];
   avgSeasons:number = 0;
 
   getSeries():void{
@@ -20,6 +20,12 @@ export class SeriesComponent implements OnInit{
     })
   }
   
+  onClick(event:Event){
+    console.log(`${(event.target as Element).id}`)
+    this.service.changeMessage((event.target as Element).id)
+
+  }
+
   ngOnInit(): void {
     this.getSeries();
   }

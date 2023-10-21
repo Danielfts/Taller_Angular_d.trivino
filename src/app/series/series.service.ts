@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { Observable } from 'rxjs';
+import { BehaviorSubject } from 'rxjs';
 import { Serie } from './serie';
 
 @Injectable({
@@ -11,6 +12,7 @@ export class SeriesService {
   constructor(private http: HttpClient) {}
 
   private apiURL: string = environment.baseUrl;
+
 
   getSeries(): Observable<Serie[]> {
     return this.http.get<Serie[]>(this.apiURL);
@@ -23,5 +25,12 @@ export class SeriesService {
     });
     let avg = sum / series.length;
     return avg;
+  }
+
+  private messageSource = new BehaviorSubject<String> ("default message");
+  currentMessage = this.messageSource.asObservable();
+
+  changeMessage(message: string ){
+    this.messageSource.next(message);
   }
 }
