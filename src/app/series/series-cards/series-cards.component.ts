@@ -26,13 +26,14 @@ export class SeriesCardsComponent implements OnInit{
   }
 
   updateCards(id:number):void{
-
+    this.serie = this.series[id];
   }
 
   ngOnInit(): void {
       this.getSeries();
       this.service.currentMessage.subscribe((message)=> {
         this.message = message;
+        this.updateCards((this.message as unknown as number) - 1);
       })
   }
 

@@ -12,7 +12,7 @@
       <tr *ngFor="let serie of series">
         <td>{{serie.id}}</td>
         <td>
-          <button id="{{serie.id}}" class="btn default my-1" (click)="onClick($event)">{{serie.name}}</button>
+          <button id="{{serie.id}}" class="btn default" (click)="onClick($event)">{{serie.name}}</button>
         </td>
         <td>{{serie.channel}}</td>
         <td>{{serie.seasons}}</td>
